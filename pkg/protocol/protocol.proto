@@ -1,0 +1,244 @@
+syntax = "proto3";
+
+option go_package="../protocol";
+package protocol;
+
+message MessageHeader {
+  string client_version = 1;
+  int64 timestamp = 2;
+  string id = 3;
+  string node_id = 4;
+  string receiver = 5;
+  bytes node_pub_key = 6;
+  bytes sign = 7;
+}
+
+message Message {
+  MessageHeader header = 1;
+  MessageType type = 2;
+  bytes body = 3;
+  int32 result_code = 4;
+  string result_message = 5;
+}
+
+enum MessageType {
+  PEER_IDENTITY = 0;
+  HOST_INFO = 1;
+  AI_PROJECT = 2;
+  reserved 3 to 15;
+  CHAT_COMPLETION = 16;
+  IMAGE_GENERATION = 17;
+}
+
+message PeerIdentityBody {
+  oneof data {
+    PeerIdentityRequest req = 1;
+    PeerIdentityResponse res = 2;
+  }
+}
+
+message PeerIdentityRequest {
+}
+
+message PeerIdentityResponse {
+  string protocol_version = 5; // e.g. ipfs/1.0.0
+  string agent_version = 6; // e.g. go-ipfs/0.1.0
+  bytes public_key = 1;
+  repeated string listen_addrs = 2;
+  repeated string protocols = 3;
+}
+
+message WalletVerification {
+  string wallet = 1;
+  string signature = 2;
+  string hash = 3;
+}
+
+message ImageGenerationBody {
+  oneof data {
+    ImageGenerationRequest req = 1;
+    ImageGenerationResponse res = 2;
+  }
+}
+
+message ImageGenerationRequest {
+  string project = 1;
+  string model = 2;
+  string prompt = 3;
+  int32 number = 4;
+  string size = 5;
+  int32 width = 6;
+  int32 height = 7;
+  string response_format = 8;
+  string cid = 9;
+  int32 step = 10;
+  string file = 11;
+  reserved 12 to 15;
+  WalletVerification wallet = 16;
+}
+
+message ImageGenerationResponse {
+  message ImageResponseChoice {
+    string url = 1;
+    string b64_json = 2;
+    string revised_prompt = 3;
+  }
+  int64 created = 1;
+  repeated ImageResponseChoice choices = 2;
+}
+
+message ChatCompletionBody {
+  oneof data {
+    ChatCompletionRequest req = 1;
+    ChatCompletionResponse res = 2;
+  }
+}
+
+message ChatContentPart {
+  enum Type {
+    TEXT = 0;
+    IMAGE = 1;
+    AUDIO = 2;
+  }
+  message Text {
+    string type = 1;
+    string text = 2;
+  }
+  message Image {
+    string type = 1;
+    string url = 2;
+    string detail = 3;
+  }
+  message Audio {
+    string type = 1;
+    string data = 2;
+    string format = 3;
+  }
+  Type type = 1;
+  Text text = 2;
+  Image image = 3;
+  Audio audio = 4;
+}
+
+message ChatContentParts {
+  repeated ChatContentPart parts = 1;
+}
+
+message ChatCompletionMessage {
+  string role = 1;
+  bytes content = 2;
+  // oneof content {
+  //  string text = 2;
+    // Fields in oneofs must not have labels (required / optional / repeated).
+    // repeated ChatContentPart parts = 3;
+  //   ChatContentParts parts = 3;
+  // }
+}
+
+message ChatCompletionRequest {
+  string project = 1;
+  string model = 2;
+  repeated ChatCompletionMessage messages = 3;
+  bool stream = 4;
+  string cid = 5;
+  float temperature = 6;
+  float top_p = 7;
+  reserved 8 to 15;
+  WalletVerification wallet = 16;
+}
+
+message ChatCompletionResponseMessage {
+  string role = 1;
+  string content = 2;
+}
+
+message ChatCompletionResponse {
+  message ChatResponseChoice {
+    int32 index = 1;
+    ChatCompletionResponseMessage message = 2;
+    string finish_reason = 3;
+  }
+  message ChatResponseUsage {
+    int32 completion_tokens = 1;
+    int32 prompt_tokens = 2;
+    int32 total_tokens = 3;
+  }
+  int64 created = 1;
+  repeated ChatResponseChoice choices = 2;
+  ChatResponseUsage usage = 3;
+  string id = 4;
+  string object = 5;
+}
+
+message HostInfoBody {
+  oneof data {
+    HostInfoRequest req = 1;
+    HostInfoResponse res = 2;
+  }
+}
+
+message HostInfoRequest {
+}
+
+message HostInfoResponse {
+  message OSInfo {
+    string os = 1;
+    string platform = 2;
+    string platform_family = 3;
+    string platform_version = 4;
+    string kernel_version = 5;
+    string kernel_arch = 6;
+  }
+  message CpuInfo {
+    string model_name = 1;
+    uint32 total_cores = 2;
+    uint32 total_threads = 3;
+  }
+  message MemoryInfo {
+    int64 total_physical_bytes = 1;
+    int64 total_usable_bytes = 2;
+  }
+  message DiskInfo {
+    string drive_type = 1;
+    uint64 size_bytes = 2;
+    string model = 3;
+    string serial_number = 4;
+  }
+  message GpuInfo {
+    string vendor = 1;
+    string product = 2;
+  }
+  OSInfo os = 1;
+  repeated CpuInfo cpu = 2;
+  MemoryInfo memory = 3;
+  repeated DiskInfo disk = 4;
+  repeated GpuInfo gpu = 5;
+}
+
+message AIProjectBody {
+  oneof data {
+    AIProjectRequest req = 1;
+    AIProjectResponse res = 2;
+  }
+}
+
+message AIModelOfProject {
+  string model = 1;
+  string api = 2;
+  uint32 type = 3;
+  uint32 idle = 4;
+  string cid = 5;
+}
+
+message AIProjectOfNode {
+  string project = 1;
+  repeated AIModelOfProject models = 2;
+}
+
+message AIProjectRequest {
+}
+
+message AIProjectResponse {
+  repeated AIProjectOfNode projects = 1;
+  uint32 node_type = 2;
+}
