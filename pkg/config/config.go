@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"AIComputingNode/pkg/types"
+	"AIL2-ComputeNet/pkg/types"
 
 	"github.com/mattn/go-isatty"
 	"github.com/multiformats/go-multiaddr"

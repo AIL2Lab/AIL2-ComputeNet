@@ -1,10 +1,10 @@
 package conngater
 
 import (
-	"AIComputingNode/pkg/config"
-	"AIComputingNode/pkg/db"
-	"AIComputingNode/pkg/log"
-	"AIComputingNode/pkg/types"
+	"AIL2-ComputeNet/pkg/config"
+	"AIL2-ComputeNet/pkg/db"
+	"AIL2-ComputeNet/pkg/log"
+	"AIL2-ComputeNet/pkg/types"
 
 	"github.com/libp2p/go-libp2p/core/control"
 	"github.com/libp2p/go-libp2p/core/network"

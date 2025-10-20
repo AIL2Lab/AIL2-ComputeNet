@@ -1,7 +1,7 @@
 package ps
 
 import (
-	"AIComputingNode/pkg/log"
+	"AIL2-ComputeNet/pkg/log"
 
 	pubsub "github.com/libp2p/go-libp2p-pubsub"
 	pb "github.com/libp2p/go-libp2p-pubsub/pb"

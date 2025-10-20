@@ -15,7 +15,7 @@ import (
 	"time"
 )
 
-// go test -v -timeout 360s -count=1 -run TestUpdateGithubLatestRelease AIComputingNode/pkg/selfupdate
+// go test -v -timeout 360s -count=1 -run TestUpdateGithubLatestRelease AIL2-ComputeNet/pkg/selfupdate
 func TestUpdateGithubLatestRelease(t *testing.T) {
 	var cur_version = "v0.1.8"
 	t.Log("Operating System:", runtime.GOOS)
@@ -119,7 +119,7 @@ func TestUpdateGithubLatestRelease(t *testing.T) {
 	// 4. Automatic restart during idle time
 }
 
-// go test -v -timeout 30s -count=1 -run TestFilePath AIComputingNode/pkg/selfupdate
+// go test -v -timeout 30s -count=1 -run TestFilePath AIL2-ComputeNet/pkg/selfupdate
 func TestFilePath(t *testing.T) {
 	path1, err := os.Executable()
 	if err != nil {
@@ -137,7 +137,7 @@ func TestFilePath(t *testing.T) {
 	t.Log("os.Getwd:", path2)
 }
 
-// go test -v -timeout 30s -count=1 -run TestCalculateSHA256 AIComputingNode/pkg/selfupdate
+// go test -v -timeout 30s -count=1 -run TestCalculateSHA256 AIL2-ComputeNet/pkg/selfupdate
 func TestCalculateSHA256(t *testing.T) {
 	if hashstr, err := sha256sum("github_releases.go"); err != nil {
 		t.Fatalf("sha256sum failed: %v", err)

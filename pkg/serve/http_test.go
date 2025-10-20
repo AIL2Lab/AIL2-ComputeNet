@@ -36,7 +36,7 @@ func TestNewHttpRequest(t *testing.T) {
 
 // https://juejin.cn/post/7033671944587182087
 // Incorrect examples will cause panic
-// go test -v -timeout 30s -count=1 -run TestChannel1 AIComputingNode/pkg/serve
+// go test -v -timeout 30s -count=1 -run TestChannel1 AIL2-ComputeNet/pkg/serve
 func TestChannel1(t *testing.T) {
 	ch := make(chan int)
 	wg := sync.WaitGroup{}
@@ -75,7 +75,7 @@ func TestChannel1(t *testing.T) {
 	wg.Wait()
 }
 
-// go test -v -timeout 30s -count=1 -run TestChannel1 AIComputingNode/pkg/serve
+// go test -v -timeout 30s -count=1 -run TestChannel1 AIL2-ComputeNet/pkg/serve
 func TestChannel2(t *testing.T) {
 	ch := make(chan int)
 	wg := sync.WaitGroup{}
@@ -114,7 +114,7 @@ func TestChannel2(t *testing.T) {
 	wg.Wait()
 }
 
-// go test -v -timeout 30s -count=1 -run TestChannel3 AIComputingNode/pkg/serve
+// go test -v -timeout 30s -count=1 -run TestChannel3 AIL2-ComputeNet/pkg/serve
 func TestChannel3(t *testing.T) {
 	// ch := make(chan int)
 	ch := make(chan int, 1)

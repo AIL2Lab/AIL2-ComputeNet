@@ -10,10 +10,10 @@ import (
 	"net/url"
 	"time"
 
-	"AIComputingNode/pkg/log"
-	"AIComputingNode/pkg/model"
-	"AIComputingNode/pkg/timer"
-	"AIComputingNode/pkg/types"
+	"AIL2-ComputeNet/pkg/log"
+	"AIL2-ComputeNet/pkg/model"
+	"AIL2-ComputeNet/pkg/timer"
+	"AIL2-ComputeNet/pkg/types"
 
 	"github.com/libp2p/go-libp2p/core/network"
 )

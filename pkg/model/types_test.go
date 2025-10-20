@@ -1,12 +1,12 @@
 package model
 
 import (
-	"AIComputingNode/pkg/types"
+	"AIL2-ComputeNet/pkg/types"
 	"sync"
 	"testing"
 )
 
-// go test -v -timeout 30s -count=1 -run TestSyncMap AIComputingNode/pkg/model
+// go test -v -timeout 30s -count=1 -run TestSyncMap AIL2-ComputeNet/pkg/model
 func TestSyncMap(t *testing.T) {
 	pjt := make([]types.AIProjectConfig, 0)
 	pjt = append(pjt, types.AIProjectConfig{
@@ -208,7 +208,7 @@ func TestSyncMap(t *testing.T) {
 	}
 }
 
-// go test -v -timeout 30s -count=1 -run TestConcurrentMap AIComputingNode/pkg/model
+// go test -v -timeout 30s -count=1 -run TestConcurrentMap AIL2-ComputeNet/pkg/model
 func TestConcurrentMap(t *testing.T) {
 	pjt := make([]types.AIProjectConfig, 0)
 	pjt = append(pjt, types.AIProjectConfig{

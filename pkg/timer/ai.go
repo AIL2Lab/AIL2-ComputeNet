@@ -3,12 +3,12 @@ package timer
 import (
 	"time"
 
-	"AIComputingNode/pkg/config"
-	"AIComputingNode/pkg/libp2p/host"
-	"AIComputingNode/pkg/log"
-	"AIComputingNode/pkg/model"
-	"AIComputingNode/pkg/protocol"
-	"AIComputingNode/pkg/types"
+	"AIL2-ComputeNet/pkg/config"
+	"AIL2-ComputeNet/pkg/libp2p/host"
+	"AIL2-ComputeNet/pkg/log"
+	"AIL2-ComputeNet/pkg/model"
+	"AIL2-ComputeNet/pkg/protocol"
+	"AIL2-ComputeNet/pkg/types"
 
 	"google.golang.org/protobuf/proto"
 )

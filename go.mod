@@ -1,4 +1,4 @@
-module AIComputingNode
+module AIL2-ComputeNet
 
 go 1.22.8
 

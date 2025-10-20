@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"AIComputingNode/pkg/log"
+	"AIL2-ComputeNet/pkg/log"
 )
 
 func (hio *HostInfo) StartPingService(ctx context.Context) {

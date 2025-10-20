@@ -13,8 +13,8 @@ import (
 	"sync"
 	"testing"
 
-	"AIComputingNode/pkg/test"
-	"AIComputingNode/pkg/types"
+	"AIL2-ComputeNet/pkg/test"
+	"AIL2-ComputeNet/pkg/types"
 )
 
 var steamRequest = `"阅读下面的材料，根据要求写作。
@@ -23,9 +23,9 @@ var steamRequest = `"阅读下面的材料，根据要求写作。
 要求：选准角度，确定立意，明确文体，自拟标题；不要套作，不得抄袭；不得泄露个人信息；不少于800字。
 "`
 
-// go test -v -timeout 30s -count=1 -run TestChatModel AIComputingNode/pkg/model
+// go test -v -timeout 30s -count=1 -run TestChatModel AIL2-ComputeNet/pkg/model
 func TestChatModel(t *testing.T) {
-	config, err := test.LoadConfig("D:/Code/AIComputingNode/test.json")
+	config, err := test.LoadConfig("D:/Code/AIL2-ComputeNet/test.json")
 	if err != nil {
 		t.Fatalf("Error loading test config file: %v", err)
 	}
@@ -188,9 +188,9 @@ func StreamChatModel2(api string, chatReq types.ChatModelRequest) (code int, mes
 	return code, message
 }
 
-// go test -v -timeout 300s -count=1 -run TestStreamChatModel AIComputingNode/pkg/model
+// go test -v -timeout 300s -count=1 -run TestStreamChatModel AIL2-ComputeNet/pkg/model
 func TestStreamChatModel(t *testing.T) {
-	config, err := test.LoadConfig("D:/Code/AIComputingNode/test.json")
+	config, err := test.LoadConfig("D:/Code/AIL2-ComputeNet/test.json")
 	if err != nil {
 		t.Fatalf("Error loading test config file: %v", err)
 	}
@@ -213,7 +213,7 @@ func TestStreamChatModel(t *testing.T) {
 }
 
 func TestConcurrentStreamChatModel(t *testing.T) {
-	config, err := test.LoadConfig("D:/Code/AIComputingNode/test.json")
+	config, err := test.LoadConfig("D:/Code/AIL2-ComputeNet/test.json")
 	if err != nil {
 		t.Fatalf("Error loading test config file: %v", err)
 	}
@@ -277,9 +277,9 @@ func TestConcurrentStreamChatModel(t *testing.T) {
 	wg.Wait()
 }
 
-// go test -v -timeout 300s -count=1 -run TestImageModel AIComputingNode/pkg/model
+// go test -v -timeout 300s -count=1 -run TestImageModel AIL2-ComputeNet/pkg/model
 func TestImageModel(t *testing.T) {
-	config, err := test.LoadConfig("D:/Code/AIComputingNode/test.json")
+	config, err := test.LoadConfig("D:/Code/AIL2-ComputeNet/test.json")
 	if err != nil {
 		t.Fatalf("Error loading test config file: %v", err)
 	}
@@ -302,9 +302,9 @@ func TestImageModel(t *testing.T) {
 	t.Logf("Execute model %s with %q result %v", config.Models.SuperImage.Name, prompt, res.ImageModelResponse)
 }
 
-// go test -v -timeout 300s -count=1 -run TestImageEdit AIComputingNode/pkg/model
+// go test -v -timeout 300s -count=1 -run TestImageEdit AIL2-ComputeNet/pkg/model
 func TestImageEdit(t *testing.T) {
-	config, err := test.LoadConfig("/Volumes/data/code/AIComputingNode/test.json")
+	config, err := test.LoadConfig("/Volumes/data/code/AIL2-ComputeNet/test.json")
 	if err != nil {
 		t.Fatalf("Error loading test config file: %v", err)
 	}

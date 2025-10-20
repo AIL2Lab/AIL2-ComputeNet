@@ -10,8 +10,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"AIComputingNode/pkg/log"
-	"AIComputingNode/pkg/model"
+	"AIL2-ComputeNet/pkg/log"
+	"AIL2-ComputeNet/pkg/model"
 )
 
 func UpdateGithubLatestRelease(ctx context.Context, cur_version string, activeReqs *int32) {

@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-// go test -v -timeout 30s -count=1 -run TestAIRegister AIComputingNode/pkg/types
+// go test -v -timeout 30s -count=1 -run TestAIRegister AIL2-ComputeNet/pkg/types
 func TestAIRegister(t *testing.T) {
 	aipjts := make([]AIProjectConfig, 0)
 

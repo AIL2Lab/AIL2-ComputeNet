@@ -11,7 +11,7 @@ import (
 	"gopkg.in/natefinch/lumberjack.v2"
 )
 
-var Logger = log.Logger("AIComputingNode")
+var Logger = log.Logger("AIL2-ComputeNet")
 
 func InitLogging(levelString string, logFile string, logOutput string) error {
 	logLevel, err := log.LevelFromString(levelString)
@@ -19,7 +19,7 @@ func InitLogging(levelString string, logFile string, logOutput string) error {
 		return err
 	}
 	log.SetAllLoggers(logLevel)
-	log.SetLogLevel("AIComputingNode", levelString)
+	log.SetLogLevel("AIL2-ComputeNet", levelString)
 
 	// multiWriteSyncer := make([]zapcore.WriteSyncer, 0)
 	// outputOptions := strings.Split(logOutput, "+")

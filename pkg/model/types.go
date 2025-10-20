@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sync"
 
-	"AIComputingNode/pkg/types"
+	"AIL2-ComputeNet/pkg/types"
 )
 
 type ProjectMap struct {

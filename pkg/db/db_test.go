@@ -1,7 +1,7 @@
 package db
 
 import (
-	"AIComputingNode/pkg/types"
+	"AIL2-ComputeNet/pkg/types"
 	"encoding/json"
 	"os"
 	"testing"
@@ -46,7 +46,7 @@ func TestLevelDB(t *testing.T) {
 	os.RemoveAll("./models.db")
 }
 
-// go test -v -timeout 30s -count=1 -run TestGetPeersOfAIProject AIComputingNode/pkg/db
+// go test -v -timeout 30s -count=1 -run TestGetPeersOfAIProject AIL2-ComputeNet//pkg/db
 func TestGetPeersOfAIProject(t *testing.T) {
 	if err := InitDb(InitOptions{
 		Folder:             ".",

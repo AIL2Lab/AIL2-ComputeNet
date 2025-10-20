@@ -13,7 +13,7 @@ import (
 	"strings"
 	"time"
 
-	"AIComputingNode/pkg/log"
+	"AIL2-ComputeNet/pkg/log"
 )
 
 /*
@@ -33,7 +33,7 @@ curl -L \
 
 */
 
-var getGithubLatestReleaseUrl = "https://api.github.com/repos/DeepBrainChain/AIComputingNode/releases/latest"
+var getGithubLatestReleaseUrl = "https://api.github.com/repos/AIL2Lab/AIL2-ComputeNet/releases/latest"
 
 type GithubReleaseAsset struct {
 	Url                string `json:"url"`

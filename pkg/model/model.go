@@ -9,7 +9,7 @@ import (
 	"mime/multipart"
 	"net/http"
 
-	"AIComputingNode/pkg/types"
+	"AIL2-ComputeNet/pkg/types"
 )
 
 //	curl http://127.0.0.1:1042/v1/chat/completions -H "Content-Type: application/json" -d "{

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"AIComputingNode/pkg/hardware"
+	"AIL2-ComputeNet/pkg/hardware"
 
 	"github.com/jaypipes/ghw"
 	psutil "github.com/shirou/gopsutil/v3/host"

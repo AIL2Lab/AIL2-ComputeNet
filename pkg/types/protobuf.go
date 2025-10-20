@@ -1,6 +1,6 @@
 package types
 
-import "AIComputingNode/pkg/protocol"
+import "AIL2-ComputeNet/pkg/protocol"
 
 func HostInfo2ProtocolMessage(hostInfo *HostInfo) *protocol.HostInfoResponse {
 	res := &protocol.HostInfoResponse{

@@ -7,7 +7,7 @@ import (
 	"github.com/go-co-op/gocron/v2"
 )
 
-// go test -v -timeout 30s -count=1 -run TestGoCron AIComputingNode/pkg/timer
+// go test -v -timeout 30s -count=1 -run TestGoCron AIL2-ComputeNet/pkg/timer
 func TestGoCron(t *testing.T) {
 	s, err := gocron.NewScheduler()
 	if err != nil {

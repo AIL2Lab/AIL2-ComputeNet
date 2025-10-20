@@ -58,9 +58,9 @@ As you can see, the proxy prints the listening address `127.0.0.1:8541`. You can
 it works!
 
 > curl -x "127.0.0.1:8541" "http://8.219.75.114:8081/api/v0/id"
-{"peer_id":"16Uiu2HAmS4CErxrmPryJbbEX2HFQbLK8r8xCA5rmzdSU59rHc9AF","protocol_version":"aicn/0.0.1","agent_version":"v0.1.0","addresses":["/ip4/127.0.0.1/tcp/6001","/ip4/172.19.236.172/tcp/6001","/ip6/::1/tcp/6001"],"protocols":["/ipfs/ping/1.0.0","/libp2p/circuit/relay/0.2.0/stop","/dbc/kad/1.0.0","/libp2p/autonat/1.0.0","/ipfs/id/1.0.0","/ipfs/id/push/1.0.0","/floodsub/1.0.0","/libp2p/circuit/relay/0.2.0/hop"]}
+{"peer_id":"16Uiu2HAmS4CErxrmPryJbbEX2HFQbLK8r8xCA5rmzdSU59rHc9AF","protocol_version":"aicn/0.0.1","agent_version":"v0.1.0","addresses":["/ip4/127.0.0.1/tcp/6001","/ip4/172.19.236.172/tcp/6001","/ip6/::1/tcp/6001"],"protocols":["/ipfs/ping/1.0.0","/libp2p/circuit/relay/0.2.0/stop","/AIL2/kad/1.0.0","/libp2p/autonat/1.0.0","/ipfs/id/1.0.0","/ipfs/id/push/1.0.0","/floodsub/1.0.0","/libp2p/circuit/relay/0.2.0/hop"]}
 
 > curl -x "127.0.0.1:8541" "http://8.219.75.114:8081/api/v0/peer" -X POST --header "Content-Type: application/json" --data-raw "{\"node_id\": \"16Uiu2HAmRTpigc7jAbsLndB2xDEBMAXLb887SBEFhfdJeEJNtqRM\"}"
-{"code":0,"message":"ok","data":{"peer_id":"16Uiu2HAmRTpigc7jAbsLndB2xDEBMAXLb887SBEFhfdJeEJNtqRM","protocol_version":"aicn/0.0.1","agent_version":"v0.1.0","addresses":["/ip4/122.99.183.54/tcp/6001","/ip4/127.0.0.1/tcp/6001","/ip6/::1/tcp/6001"],"protocols":["/ipfs/ping/1.0.0","/libp2p/circuit/relay/0.2.0/stop","/dbc/kad/1.0.0","/libp2p/autonat/1.0.0","/ipfs/id/1.0.0","/ipfs/id/push/1.0.0","/floodsub/1.0.0","/libp2p/circuit/relay/0.2.0/hop"]}}
+{"code":0,"message":"ok","data":{"peer_id":"16Uiu2HAmRTpigc7jAbsLndB2xDEBMAXLb887SBEFhfdJeEJNtqRM","protocol_version":"aicn/0.0.1","agent_version":"v0.1.0","addresses":["/ip4/122.99.183.54/tcp/6001","/ip4/127.0.0.1/tcp/6001","/ip6/::1/tcp/6001"],"protocols":["/ipfs/ping/1.0.0","/libp2p/circuit/relay/0.2.0/stop","/AIL2/kad/1.0.0","/libp2p/autonat/1.0.0","/ipfs/id/1.0.0","/ipfs/id/push/1.0.0","/floodsub/1.0.0","/libp2p/circuit/relay/0.2.0/hop"]}}
 
 ```

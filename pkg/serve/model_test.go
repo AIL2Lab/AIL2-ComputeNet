@@ -4,7 +4,7 @@ import (
 	"sort"
 	"testing"
 
-	"AIComputingNode/pkg/types"
+	"AIL2-ComputeNet/pkg/types"
 )
 
 // type ModelInfo struct {

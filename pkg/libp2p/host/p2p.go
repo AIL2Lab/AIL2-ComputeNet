@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"AIComputingNode/pkg/types"
+	"AIL2-ComputeNet/pkg/types"
 
 	dht "github.com/libp2p/go-libp2p-kad-dht"
 	pubsub "github.com/libp2p/go-libp2p-pubsub"

@@ -21,13 +21,13 @@ import (
 	"github.com/libp2p/go-libp2p/core/network"
 	"github.com/libp2p/go-libp2p/core/peer"
 
-	"AIComputingNode/pkg/test"
-	"AIComputingNode/pkg/types"
+	"AIL2-ComputeNet/pkg/test"
+	"AIL2-ComputeNet/pkg/types"
 
 	golog "github.com/ipfs/go-log/v2"
 )
 
-var tlog = golog.Logger("AIComputingNode")
+var tlog = golog.Logger("AIL2-ComputeNet")
 
 // streamHandler is our function to handle any libp2p-net streams that belong
 // to our protocol. The streams should contain an HTTP request which we need
@@ -240,10 +240,10 @@ func TestHttpReuse(t *testing.T) {
 	}
 }
 
-// go test -v -timeout 300s -count=1 -run TestStreamChatModel AIComputingNode/pkg/libp2p/stream > 1.log 2>&1
+// go test -v -timeout 300s -count=1 -run TestStreamChatModel AIL2-ComputeNet/pkg/libp2p/stream > 1.log 2>&1
 func TestStreamChatModel(t *testing.T) {
 	golog.SetAllLoggers(golog.LevelInfo)
-	config, err := test.LoadConfig("D:/Code/AIComputingNode/test.json")
+	config, err := test.LoadConfig("D:/Code/AIL2-ComputeNet/test.json")
 	if err != nil {
 		t.Fatalf("Error loading test config file: %v", err)
 	}

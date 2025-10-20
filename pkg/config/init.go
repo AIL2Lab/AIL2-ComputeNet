@@ -6,7 +6,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"AIComputingNode/pkg/types"
+	"AIL2-ComputeNet/pkg/types"
 
 	"github.com/libp2p/go-libp2p/core/crypto"
 	"github.com/libp2p/go-libp2p/core/peer"
@@ -15,7 +15,7 @@ import (
 var (
 	ProtocolPrefix string = "/AIL2"
 	PreSharedKey   string = "f504f536a912a8cf7d00adacee8ed20270c5040d961d7f3da4fccbcbec0ec48a"
-	TopicName      string = "DeepBrainChain"
+	TopicName      string = "AIL2"
 )
 
 func Init(mode string) error {

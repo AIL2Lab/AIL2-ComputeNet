@@ -1,8 +1,8 @@
 package hardware
 
 import (
-	"AIComputingNode/pkg/log"
-	"AIComputingNode/pkg/types"
+	"AIL2-ComputeNet/pkg/log"
+	"AIL2-ComputeNet/pkg/types"
 
 	"github.com/jaypipes/ghw"
 	ghw_block "github.com/jaypipes/ghw/pkg/block"

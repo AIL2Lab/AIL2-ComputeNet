@@ -10,7 +10,7 @@ import (
 	"net/http"
 	"sync"
 
-	"AIComputingNode/pkg/types"
+	"AIL2-ComputeNet/pkg/types"
 
 	golog "github.com/ipfs/go-log/v2"
 )
